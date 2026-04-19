@@ -1,31 +1,65 @@
 <!doctype html>
 <html>
-  <head>
-    <title>LA TV Shows | Home</title>
-    <meta name="description" content="A Catalog of Shows Set in Los Angeles" />
-    <link rel="stylesheet" href="style.css" />
-    <script type="text/javascript" src="scripts.js"></script>
-  </head>
+<head>
+  <title>FlightDeckCatalog</title>
+  <meta name="description" content="Interactive Aviation Operations Catalog" />
+  <link rel="stylesheet" href="style.css" />
+  <script type="text/javascript" src="scripts.js"></script>
+</head>
 
-  <body>
-    <header class="main-header">
-      <h1 class="title">LA TV Shows</h1>
-    </header>
-    <div id="card-container"></div>
-    <div class="card" style="display: none">
-      <div class="card-content">
-        <h2>TV Show Title</h2>
-        <img src="" alt="TV Show Poster" />
-        <ul>
-          <li>Bullet Point 1</li>
-          <li>Bullet Point 2</li>
-          <li>Bullet Point 3</li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer">
-      <button onclick="quoteAlert()">Get A Quote!</button>
-      <button onclick="removeLastCard()">Remove A Card!</button>
-    </div>
-  </body>
+<body>
+
+<header class="main-header">
+  <h1 class="title">FlightDeckCatalog</h1>
+  <p class="subtitle">
+    Search, filter, and explore aviation operations data including airlines,
+    routes, aircraft, and flight status.
+  </p>
+</header>
+
+<section class="controls">
+
+<input
+type="text"
+id="searchInput"
+placeholder="Search by airline, route, or flight number..."
+>
+
+<select id="statusFilter">
+<option value="all">All Status</option>
+<option value="On Time">On Time</option>
+<option value="Delayed">Delayed</option>
+<option value="Boarding">Boarding</option>
+</select>
+
+<select id="sortFlights">
+<option value="default">Sort Flights</option>
+<option value="airline">Airline</option>
+<option value="departure">Departure Time</option>
+</select>
+
+</section>
+
+<div id="card-container"></div>
+
+<div class="card" style="display:none">
+<div class="card-content">
+
+<h2>Flight Title</h2>
+
+<ul>
+<li>Flight Number</li>
+<li>Route</li>
+<li>Status</li>
+<li>Aircraft</li>
+</ul>
+
+</div>
+</div>
+
+<div class="footer">
+<button onclick="resetCatalog()">Reset Catalog</button>
+</div>
+
+</body>
 </html>
