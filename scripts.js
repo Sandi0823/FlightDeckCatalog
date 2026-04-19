@@ -1,97 +1,220 @@
-/**
- * Data Catalog Project Starter Code - SEA Stage 2
- *
- * This file is where you should be doing most of your work. You should
- * also make changes to the HTML and CSS files, but we want you to prioritize
- * demonstrating your understanding of data structures, and you'll do that
- * with the JavaScript code you write in this file.
- *
- * The comments in this file are only to help you learn how the starter code
- * works. The instructions for the project are in the README. That said, here
- * are the three things you should do first to learn about the starter code:
- * - 1 - Change something small in index.html or style.css, then reload your
- *    browser and make sure you can see that change.
- * - 2 - On your browser, right click anywhere on the page and select
- *    "Inspect" to open the browser developer tools. Then, go to the "console"
- *    tab in the new window that opened up. This console is where you will see
- *    JavaScript errors and logs, which is extremely helpful for debugging.
- *    (These instructions assume you're using Chrome, opening developer tools
- *    may be different on other browsers. We suggest using Chrome.)
- * - 3 - Add another string to the titles array a few lines down. Reload your
- *    browser and observe what happens. You should see a fourth "card" appear
- *    with the string you added to the array, but a broken image.
- *
- */
-
-const FRESH_PRINCE_URL =
-  "https://upload.wikimedia.org/wikipedia/en/3/33/Fresh_Prince_S1_DVD.jpg";
-const CURB_POSTER_URL =
-  "https://m.media-amazon.com/images/M/MV5BZDY1ZGM4OGItMWMyNS00MDAyLWE2Y2MtZTFhMTU0MGI5ZDFlXkEyXkFqcGdeQXVyMDc5ODIzMw@@._V1_FMjpg_UX1000_.jpg";
-const EAST_LOS_HIGH_POSTER_URL =
-  "https://static.wikia.nocookie.net/hulu/images/6/64/East_Los_High.jpg";
-
-// This is an array of strings (TV show titles)
-let titles = [
-  "Fresh Prince of Bel Air",
-  "Curb Your Enthusiasm",
-  "East Los High",
+const flights = [
+  {
+    id: 1,
+    airline: "United Airlines",
+    flightNumber: "UA217",
+    origin: "LAX",
+    destination: "JFK",
+    aircraft: "Airbus A320",
+    status: "On Time",
+    departureTime: "08:30",
+    category: "Domestic"
+  },
+  {
+    id: 2,
+    airline: "Delta Air Lines",
+    flightNumber: "DL145",
+    origin: "LAX",
+    destination: "ATL",
+    aircraft: "Boeing 737-900",
+    status: "Boarding",
+    departureTime: "09:15",
+    category: "Domestic"
+  },
+  {
+    id: 3,
+    airline: "American Airlines",
+    flightNumber: "AA308",
+    origin: "LAX",
+    destination: "ORD",
+    aircraft: "Airbus A321",
+    status: "Delayed",
+    departureTime: "10:05",
+    category: "Domestic"
+  },
+  {
+    id: 4,
+    airline: "Japan Airlines",
+    flightNumber: "JL61",
+    origin: "LAX",
+    destination: "NRT",
+    aircraft: "Boeing 787-9",
+    status: "On Time",
+    departureTime: "11:40",
+    category: "International"
+  },
+  {
+    id: 5,
+    airline: "Korean Air",
+    flightNumber: "KE12",
+    origin: "LAX",
+    destination: "ICN",
+    aircraft: "Airbus A380",
+    status: "Boarding",
+    departureTime: "12:20",
+    category: "International"
+  },
+  {
+    id: 6,
+    airline: "Southwest Airlines",
+    flightNumber: "WN552",
+    origin: "LAX",
+    destination: "LAS",
+    aircraft: "Boeing 737-800",
+    status: "On Time",
+    departureTime: "13:05",
+    category: "Domestic"
+  },
+  {
+    id: 7,
+    airline: "Alaska Airlines",
+    flightNumber: "AS110",
+    origin: "LAX",
+    destination: "SEA",
+    aircraft: "Boeing 737 MAX 9",
+    status: "Delayed",
+    departureTime: "14:10",
+    category: "Domestic"
+  },
+  {
+    id: 8,
+    airline: "Lufthansa",
+    flightNumber: "LH457",
+    origin: "LAX",
+    destination: "FRA",
+    aircraft: "Airbus A350",
+    status: "On Time",
+    departureTime: "15:00",
+    category: "International"
+  },
+  {
+    id: 9,
+    airline: "Qatar Airways",
+    flightNumber: "QR740",
+    origin: "LAX",
+    destination: "DOH",
+    aircraft: "Airbus A350-1000",
+    status: "Boarding",
+    departureTime: "16:25",
+    category: "International"
+  },
+  {
+    id: 10,
+    airline: "Singapore Airlines",
+    flightNumber: "SQ37",
+    origin: "LAX",
+    destination: "SIN",
+    aircraft: "Airbus A350-900",
+    status: "Delayed",
+    departureTime: "17:45",
+    category: "International"
+  },
+  {
+    id: 11,
+    airline: "JetBlue",
+    flightNumber: "B6202",
+    origin: "LAX",
+    destination: "BOS",
+    aircraft: "Airbus A321neo",
+    status: "On Time",
+    departureTime: "18:10",
+    category: "Domestic"
+  },
+  {
+    id: 12,
+    airline: "Emirates",
+    flightNumber: "EK216",
+    origin: "LAX",
+    destination: "DXB",
+    aircraft: "Airbus A380",
+    status: "Boarding",
+    departureTime: "20:00",
+    category: "International"
+  },
+  {
+    id: 13,
+    airline: "Qantas",
+    flightNumber: "QF12",
+    origin: "LAX",
+    destination: "SYD",
+    aircraft: "Airbus A380",
+    status: "On Time",
+    departureTime: "21:30",
+    category: "International"
+  }
 ];
-// Your final submission should have much more data than this, and
-// you should use more than just an array of strings to store it all.
 
-// This function adds cards the page to display the data in the array
-function showCards() {
+let displayedFlights = [...flights];
+
+function showCards(flightList) {
   const cardContainer = document.getElementById("card-container");
   cardContainer.innerHTML = "";
   const templateCard = document.querySelector(".card");
 
-  for (let i = 0; i < titles.length; i++) {
-    let title = titles[i];
-
-    // This part of the code doesn't scale very well! After you add your
-    // own data, you'll need to do something totally different here.
-    let imageURL = "";
-    if (i == 0) {
-      imageURL = FRESH_PRINCE_URL;
-    } else if (i == 1) {
-      imageURL = CURB_POSTER_URL;
-    } else if (i == 2) {
-      imageURL = EAST_LOS_HIGH_POSTER_URL;
-    }
-
-    const nextCard = templateCard.cloneNode(true); // Copy the template card
-    editCardContent(nextCard, title, imageURL); // Edit title and image
-    cardContainer.appendChild(nextCard); // Add new card to the container
+  for (let i = 0; i < flightList.length; i++) {
+    const flight = flightList[i];
+    const nextCard = templateCard.cloneNode(true);
+    editCardContent(nextCard, flight);
+    cardContainer.appendChild(nextCard);
   }
 }
 
-function editCardContent(card, newTitle, newImageURL) {
+function editCardContent(card, flight) {
   card.style.display = "block";
 
   const cardHeader = card.querySelector("h2");
-  cardHeader.textContent = newTitle;
+  cardHeader.textContent = `${flight.airline} - ${flight.flightNumber}`;
 
-  const cardImage = card.querySelector("img");
-  cardImage.src = newImageURL;
-  cardImage.alt = newTitle + " Poster";
-
-  // You can use console.log to help you debug!
-  // View the output by right clicking on your website,
-  // select "Inspect", then click on the "Console" tab
-  console.log("new card:", newTitle, "- html: ", card);
+  const cardList = card.querySelector("ul");
+  cardList.innerHTML = `
+    <li><strong>Route:</strong> ${flight.origin} → ${flight.destination}</li>
+    <li><strong>Aircraft:</strong> ${flight.aircraft}</li>
+    <li><strong>Status:</strong> ${flight.status}</li>
+    <li><strong>Departure:</strong> ${flight.departureTime}</li>
+    <li><strong>Category:</strong> ${flight.category}</li>
+  `;
 }
 
-// This calls the addCards() function when the page is first loaded
-document.addEventListener("DOMContentLoaded", showCards);
+function applyFilters() {
+  const searchValue = document.getElementById("searchInput").value.toLowerCase();
+  const statusValue = document.getElementById("statusFilter").value;
+  const sortValue = document.getElementById("sortFlights").value;
 
-function quoteAlert() {
-  console.log("Button Clicked!");
-  alert(
-    "I guess I can kiss heaven goodbye, because it got to be a sin to look this good!",
-  );
+  let filteredFlights = flights.filter((flight) => {
+    const matchesSearch =
+      flight.airline.toLowerCase().includes(searchValue) ||
+      flight.flightNumber.toLowerCase().includes(searchValue) ||
+      flight.origin.toLowerCase().includes(searchValue) ||
+      flight.destination.toLowerCase().includes(searchValue);
+
+    const matchesStatus =
+      statusValue === "all" || flight.status === statusValue;
+
+    return matchesSearch && matchesStatus;
+  });
+
+  if (sortValue === "airline") {
+    filteredFlights.sort((a, b) => a.airline.localeCompare(b.airline));
+  } else if (sortValue === "departure") {
+    filteredFlights.sort((a, b) => a.departureTime.localeCompare(b.departureTime));
+  }
+
+  displayedFlights = filteredFlights;
+  showCards(displayedFlights);
 }
 
-function removeLastCard() {
-  titles.pop(); // Remove last item in titles array
-  showCards(); // Call showCards again to refresh
+function resetCatalog() {
+  document.getElementById("searchInput").value = "";
+  document.getElementById("statusFilter").value = "all";
+  document.getElementById("sortFlights").value = "default";
+  displayedFlights = [...flights];
+  showCards(displayedFlights);
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  showCards(displayedFlights);
+
+  document.getElementById("searchInput").addEventListener("input", applyFilters);
+  document.getElementById("statusFilter").addEventListener("change", applyFilters);
+  document.getElementById("sortFlights").addEventListener("change", applyFilters);
+});
