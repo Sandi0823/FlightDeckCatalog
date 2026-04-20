@@ -319,9 +319,9 @@ for (let i = 0; i < baseFlights.length; i++) {
 
     let gateValue = baseFlight.baseGate;
 
-    if (j > 1 && baseFlight.category === "International" && Math.random() < 0.35) {
-      gateValue = "Pending";
-    }
+    if (j > 1 && baseFlight.category === "International") {
+  gateValue = "Pending";
+}
 
     flights.push({
       id: idCounter,
