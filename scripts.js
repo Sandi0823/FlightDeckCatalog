@@ -40,6 +40,19 @@ const flights = [
   },
   {
     id: 4,
+    airline: "United Airlines",
+    flightNumber: "UA1223",
+    origin: "LAX",
+    destination: "DEN",
+    aircraft: "Airbus A320",
+    status: "Boarding",
+    departureTime: "17:25",
+    category: "Domestic",
+    terminal: "7",
+    gate: "72B"
+  },
+  {
+    id: 5,
     airline: "Delta Air Lines",
     flightNumber: "DL145",
     origin: "LAX",
@@ -52,7 +65,7 @@ const flights = [
     gate: "32A"
   },
   {
-    id: 5,
+    id: 6,
     airline: "Delta Air Lines",
     flightNumber: "DL287",
     origin: "LAX",
@@ -65,7 +78,20 @@ const flights = [
     gate: "34B"
   },
   {
-    id: 6,
+    id: 7,
+    airline: "Delta Air Lines",
+    flightNumber: "DL410",
+    origin: "LAX",
+    destination: "SLC",
+    aircraft: "Boeing 737-800",
+    status: "On Time",
+    departureTime: "13:40",
+    category: "Domestic",
+    terminal: "3",
+    gate: "36A"
+  },
+  {
+    id: 8,
     airline: "American Airlines",
     flightNumber: "AA308",
     origin: "LAX",
@@ -78,7 +104,7 @@ const flights = [
     gate: "48B"
   },
   {
-    id: 7,
+    id: 9,
     airline: "American Airlines",
     flightNumber: "AA112",
     origin: "LAX",
@@ -91,7 +117,20 @@ const flights = [
     gate: "41A"
   },
   {
-    id: 8,
+    id: 10,
+    airline: "American Airlines",
+    flightNumber: "AA245",
+    origin: "LAX",
+    destination: "DFW",
+    aircraft: "Airbus A321neo",
+    status: "On Time",
+    departureTime: "16:20",
+    category: "Domestic",
+    terminal: "4",
+    gate: "45C"
+  },
+  {
+    id: 11,
     airline: "Alaska Airlines",
     flightNumber: "AS110",
     origin: "LAX",
@@ -104,7 +143,7 @@ const flights = [
     gate: "64A"
   },
   {
-    id: 9,
+    id: 12,
     airline: "Alaska Airlines",
     flightNumber: "AS332",
     origin: "LAX",
@@ -117,7 +156,20 @@ const flights = [
     gate: "63B"
   },
   {
-    id: 10,
+    id: 13,
+    airline: "Alaska Airlines",
+    flightNumber: "AS214",
+    origin: "LAX",
+    destination: "SFO",
+    aircraft: "Embraer 175",
+    status: "Boarding",
+    departureTime: "11:10",
+    category: "Domestic",
+    terminal: "6",
+    gate: "62A"
+  },
+  {
+    id: 14,
     airline: "Southwest Airlines",
     flightNumber: "WN552",
     origin: "LAX",
@@ -130,7 +182,20 @@ const flights = [
     gate: "14A"
   },
   {
-    id: 11,
+    id: 15,
+    airline: "Southwest Airlines",
+    flightNumber: "WN884",
+    origin: "LAX",
+    destination: "PHX",
+    aircraft: "Boeing 737 MAX 8",
+    status: "Boarding",
+    departureTime: "09:45",
+    category: "Domestic",
+    terminal: "1",
+    gate: "12B"
+  },
+  {
+    id: 16,
     airline: "JetBlue",
     flightNumber: "B6202",
     origin: "LAX",
@@ -143,7 +208,20 @@ const flights = [
     gate: "52C"
   },
   {
-    id: 12,
+    id: 17,
+    airline: "JetBlue",
+    flightNumber: "B61024",
+    origin: "LAX",
+    destination: "JFK",
+    aircraft: "Airbus A321",
+    status: "Delayed",
+    departureTime: "15:35",
+    category: "Domestic",
+    terminal: "5",
+    gate: "54A"
+  },
+  {
+    id: 18,
     airline: "Japan Airlines",
     flightNumber: "JL61",
     origin: "LAX",
@@ -156,7 +234,7 @@ const flights = [
     gate: "134"
   },
   {
-    id: 13,
+    id: 19,
     airline: "Japan Airlines",
     flightNumber: "JL15",
     origin: "LAX",
@@ -169,7 +247,7 @@ const flights = [
     gate: "132"
   },
   {
-    id: 14,
+    id: 20,
     airline: "Japan Airlines",
     flightNumber: "JL69",
     origin: "LAX",
@@ -182,7 +260,7 @@ const flights = [
     gate: "Pending"
   },
   {
-    id: 15,
+    id: 21,
     airline: "Korean Air",
     flightNumber: "KE12",
     origin: "LAX",
@@ -195,7 +273,7 @@ const flights = [
     gate: "149"
   },
   {
-    id: 16,
+    id: 22,
     airline: "ANA",
     flightNumber: "NH105",
     origin: "LAX",
@@ -208,7 +286,7 @@ const flights = [
     gate: "135"
   },
   {
-    id: 17,
+    id: 23,
     airline: "Qantas",
     flightNumber: "QF12",
     origin: "LAX",
@@ -221,7 +299,7 @@ const flights = [
     gate: "159"
   },
   {
-    id: 18,
+    id: 24,
     airline: "Qantas",
     flightNumber: "QF16",
     origin: "LAX",
@@ -234,7 +312,7 @@ const flights = [
     gate: "158"
   },
   {
-    id: 19,
+    id: 25,
     airline: "Qantas",
     flightNumber: "QF18",
     origin: "LAX",
@@ -247,7 +325,7 @@ const flights = [
     gate: "160"
   },
   {
-    id: 20,
+    id: 26,
     airline: "Cathay Pacific",
     flightNumber: "CX881",
     origin: "LAX",
@@ -260,7 +338,7 @@ const flights = [
     gate: "Pending"
   },
   {
-    id: 21,
+    id: 27,
     airline: "Cathay Pacific",
     flightNumber: "CX883",
     origin: "LAX",
@@ -273,7 +351,7 @@ const flights = [
     gate: "141"
   },
   {
-    id: 22,
+    id: 28,
     airline: "China Airlines",
     flightNumber: "CI7",
     origin: "LAX",
@@ -286,7 +364,7 @@ const flights = [
     gate: "146"
   },
   {
-    id: 23,
+    id: 29,
     airline: "China Airlines",
     flightNumber: "CI5",
     origin: "LAX",
@@ -299,7 +377,7 @@ const flights = [
     gate: "145"
   },
   {
-    id: 24,
+    id: 30,
     airline: "China Eastern",
     flightNumber: "MU586",
     origin: "LAX",
@@ -312,7 +390,7 @@ const flights = [
     gate: "Pending"
   },
   {
-    id: 25,
+    id: 31,
     airline: "China Eastern",
     flightNumber: "MU588",
     origin: "LAX",
@@ -325,7 +403,7 @@ const flights = [
     gate: "147"
   },
   {
-    id: 26,
+    id: 32,
     airline: "China Southern",
     flightNumber: "CZ328",
     origin: "LAX",
@@ -338,7 +416,7 @@ const flights = [
     gate: "142"
   },
   {
-    id: 27,
+    id: 33,
     airline: "China Southern",
     flightNumber: "CZ330",
     origin: "LAX",
@@ -351,7 +429,7 @@ const flights = [
     gate: "Pending"
   },
   {
-    id: 28,
+    id: 34,
     airline: "Sichuan Airlines",
     flightNumber: "3U3988",
     origin: "LAX",
@@ -364,7 +442,7 @@ const flights = [
     gate: "Pending"
   },
   {
-    id: 29,
+    id: 35,
     airline: "Sichuan Airlines",
     flightNumber: "3U3986",
     origin: "LAX",
@@ -377,7 +455,7 @@ const flights = [
     gate: "150"
   },
   {
-    id: 30,
+    id: 36,
     airline: "Emirates",
     flightNumber: "EK216",
     origin: "LAX",
@@ -390,7 +468,7 @@ const flights = [
     gate: "156"
   },
   {
-    id: 31,
+    id: 37,
     airline: "Singapore Airlines",
     flightNumber: "SQ37",
     origin: "LAX",
@@ -403,7 +481,7 @@ const flights = [
     gate: "148"
   },
   {
-    id: 32,
+    id: 38,
     airline: "Qatar Airways",
     flightNumber: "QR740",
     origin: "LAX",
@@ -416,7 +494,7 @@ const flights = [
     gate: "157"
   },
   {
-    id: 33,
+    id: 39,
     airline: "Lufthansa",
     flightNumber: "LH457",
     origin: "LAX",
@@ -429,7 +507,7 @@ const flights = [
     gate: "130"
   },
   {
-    id: 34,
+    id: 40,
     airline: "Air France",
     flightNumber: "AF65",
     origin: "LAX",
@@ -437,19 +515,6 @@ const flights = [
     aircraft: "Boeing 777-300ER",
     status: "On Time",
     departureTime: "14:50",
-    category: "International",
-    terminal: "B",
-    gate: "Pending"
-  },
-  {
-    id: 35,
-    airline: "British Airways",
-    flightNumber: "BA282",
-    origin: "LAX",
-    destination: "LHR",
-    aircraft: "Airbus A380",
-    status: "Delayed",
-    departureTime: "19:20",
     category: "International",
     terminal: "B",
     gate: "Pending"
