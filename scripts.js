@@ -541,8 +541,13 @@ function showCards(flightList) {
   for (let i = 0; i < flightList.length; i++) {
     const flight = flightList[i];
     const nextCard = templateCard.cloneNode(true);
-    editCardContent(nextCard, flight);
-    cardContainer.appendChild(nextCard);
+editCardContent(nextCard, flight);
+
+nextCard.addEventListener("click", function () {
+  openModal(flight);
+});
+
+cardContainer.appendChild(nextCard);
   }
 
   updateSummary(flightList);
@@ -645,6 +650,54 @@ function updateSummary(flightList) {
   delayedCount.textContent = flightList.filter((flight) => flight.status === "Delayed").length;
   boardingCount.textContent = flightList.filter((flight) => flight.status === "Boarding").length;
 }
+function openModal(flight) {
+  const modal = document.getElementById("flightModal");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalDetails = document.getElementById("modalDetails");
+
+  modalTitle.textContent = `${flight.airline} - ${flight.flightNumber}`;
+  modalDetails.innerHTML = `
+    <p><strong>Route:</strong> ${flight.origin} → ${flight.destination}</p>
+    <p><strong>Aircraft:</strong> ${flight.aircraft}</p>
+    <p><strong>Status:</strong> ${flight.status}</p>
+    <p><strong>Departure Time:</strong> ${flight.departureTime}</p>
+    <p><strong>Category:</strong> ${flight.category}</p>
+    <p><strong>Terminal:</strong> ${flight.terminal}</p>
+    <p><strong>Gate:</strong> ${flight.gate}</p>
+    <p><strong>Flight ID:</strong> ${flight.id}</p>
+  `;
+
+  modal.classList.remove("hidden");
+}
+
+function closeModal() {
+  const modal = document.getElementById("flightModal");
+  modal.classList.add("hidden");
+}
+function openModal(flight) {
+  const modal = document.getElementById("flightModal");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalDetails = document.getElementById("modalDetails");
+
+  modalTitle.textContent = `${flight.airline} - ${flight.flightNumber}`;
+  modalDetails.innerHTML = `
+    <p><strong>Route:</strong> ${flight.origin} → ${flight.destination}</p>
+    <p><strong>Aircraft:</strong> ${flight.aircraft}</p>
+    <p><strong>Status:</strong> ${flight.status}</p>
+    <p><strong>Departure Time:</strong> ${flight.departureTime}</p>
+    <p><strong>Category:</strong> ${flight.category}</p>
+    <p><strong>Terminal:</strong> ${flight.terminal}</p>
+    <p><strong>Gate:</strong> ${flight.gate}</p>
+    <p><strong>Flight ID:</strong> ${flight.id}</p>
+  `;
+
+  modal.classList.remove("hidden");
+}
+
+function closeModal() {
+  const modal = document.getElementById("flightModal");
+  modal.classList.add("hidden");
+}
 
 document.addEventListener("DOMContentLoaded", function () {
   showCards(displayedFlights);
@@ -657,4 +710,12 @@ document.addEventListener("DOMContentLoaded", function () {
   if (terminalElement) {
     terminalElement.addEventListener("change", applyFilters);
   }
+
+  document.getElementById("closeModal").addEventListener("click", closeModal);
+
+  document.getElementById("flightModal").addEventListener("click", function (event) {
+    if (event.target.id === "flightModal") {
+      closeModal();
+    }
+  });
 });
