@@ -2,7 +2,10 @@
 <html>
 <head>
   <title>FlightDeckCatalog</title>
-  <meta name="description" content="Interactive Aviation Operations Catalog" />
+  <meta
+    name="description"
+    content="Interactive catalog of LAX flight operations data featuring airlines, terminals, gates, routes, aircraft, flight status, and operational insights."
+  />
   <link rel="stylesheet" href="style.css" />
   <script type="text/javascript" src="scripts.js" defer></script>
 </head>
@@ -29,14 +32,47 @@
       <option value="Boarding">Boarding</option>
     </select>
 
-    <select id="sortFlights">
-    <option value="default">Sort Flights</option>
-    <option value="airline-asc">Airline A-Z</option>
-    <option value="airline-desc">Airline Z-A</option>
-    <option value="departure">Departure Time</option>
-    <option value="domestic">Domestic Only</option>
-    <option value="international">International Only</option>
+    <select id="terminalFilter">
+      <option value="all">All Terminals</option>
+      <option value="1">Terminal 1</option>
+      <option value="3">Terminal 3</option>
+      <option value="4">Terminal 4</option>
+      <option value="5">Terminal 5</option>
+      <option value="6">Terminal 6</option>
+      <option value="7">Terminal 7</option>
+      <option value="B">Terminal B</option>
     </select>
+
+    <select id="sortFlights">
+      <option value="default">Sort Flights</option>
+      <option value="airline-asc">Airline A-Z</option>
+      <option value="airline-desc">Airline Z-A</option>
+      <option value="departure">Departure Time</option>
+      <option value="domestic">Domestic Only</option>
+      <option value="international">International Only</option>
+    </select>
+  </section>
+
+  <section class="summary">
+    <div class="summary-card">
+      <h3>Total Flights</h3>
+      <p id="totalFlights">0</p>
+    </div>
+
+    <div class="summary-card">
+      <h3>On Time</h3>
+      <p id="onTimeCount">0</p>
+    </div>
+
+    <div class="summary-card">
+      <h3>Delayed</h3>
+      <p id="delayedCount">0</p>
+    </div>
+
+    <div class="summary-card">
+      <h3>Boarding</h3>
+      <p id="boardingCount">0</p>
+    </div>
   </section>
 
   <div id="card-container"></div>
@@ -49,6 +85,8 @@
         <li>Route</li>
         <li>Status</li>
         <li>Aircraft</li>
+        <li>Terminal</li>
+        <li>Gate</li>
       </ul>
     </div>
   </div>
