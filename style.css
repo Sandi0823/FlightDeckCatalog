@@ -137,6 +137,7 @@ button:hover {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   border: 1px solid #e6edf5;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .card:hover {
