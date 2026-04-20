@@ -310,3 +310,95 @@ button:hover {
   border-radius: 10px;
   font-size: 17px;
 }
+.main-header {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1e3a8a, #0ea5e9, #f59e0b);
+  padding: 48px 20px 50px;
+  text-align: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+
+.header-badge {
+  display: inline-block;
+  margin-top: 18px;
+  background: rgba(255, 255, 255, 0.18);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.sky-animation {
+  position: relative;
+  height: 50px;
+  margin-top: 18px;
+}
+
+.plane {
+  position: absolute;
+  font-size: 28px;
+  color: white;
+  left: -40px;
+  top: 8px;
+  animation: flyAcross 10s linear infinite;
+  opacity: 0.95;
+}
+
+@keyframes flyAcross {
+  0% {
+    left: -40px;
+    transform: translateY(0px) rotate(8deg);
+  }
+  25% {
+    transform: translateY(-6px) rotate(6deg);
+  }
+  50% {
+    transform: translateY(0px) rotate(4deg);
+  }
+  75% {
+    transform: translateY(-4px) rotate(2deg);
+  }
+  100% {
+    left: 105%;
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+.runway-lights {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.runway-lights span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+  animation: blinkLights 1.8s infinite ease-in-out;
+}
+
+.runway-lights span:nth-child(2) { animation-delay: 0.2s; }
+.runway-lights span:nth-child(3) { animation-delay: 0.4s; }
+.runway-lights span:nth-child(4) { animation-delay: 0.6s; }
+.runway-lights span:nth-child(5) { animation-delay: 0.8s; }
+.runway-lights span:nth-child(6) { animation-delay: 1s; }
+.runway-lights span:nth-child(7) { animation-delay: 1.2s; }
+.runway-lights span:nth-child(8) { animation-delay: 1.4s; }
+
+@keyframes blinkLights {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.25);
+  }
+}
