@@ -11,8 +11,7 @@ body {
 }
 
 .main-header {
-  background: linear-gradient(135deg, #071a2f, #0a2342, #123c69);
-  padding: 48px 20px 40px;
+  background: linear-gradient(135deg, #071a2d, #0a2342, #1d4f91);  padding: 48px 20px 40px;
   text-align: center;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
 }
